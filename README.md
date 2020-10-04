@@ -50,3 +50,10 @@ Search for a single item, a video file (omit `-p` flag)
 Search for a single item, a season pack (omit `-p` flag)
 
 	py CrossSeedAutoDL.py -i "D:\TorrentClientDownloadDir\complete\My.Show.Season.06.Complete" -s "D:\DownloadedTorrents" -u "http://127.0.0.1:9117" -k "cb42579eyh4j11ht5sktjswq89t89q5t" -t blutopia,broadcasthenet,morethantv
+
+# Docker
+
+Set up the `/downloads` (-i arg) and `/torrents` (-s arg) volumes, and then the rest of the arguments as post arguments.
+
+Ex:
+`docker run -v /my/torrent/downloads:/downloads:ro -v /my/torrent/watch:/torrents charlocharlie/cross-seed-auto-dl --url http://127.0.0.1:9117 --api-key cb42579eyh4j11ht5sktjswq89t89q5t --trackers blutopia,passthepopcorn`
